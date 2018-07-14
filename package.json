@@ -1,9 +1,17 @@
 {
   "name": "vue-auto-routing",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "author": "katashin",
-  "description": "",
-  "keywords": [],
+  "description": "Generate Vue Router routing automatically",
+  "keywords": [
+    "Vue",
+    "Vue Router",
+    "routing",
+    "auto generate",
+    "generator",
+    "webpack",
+    "plugin"
+  ],
   "license": "MIT",
   "main": "index.js",
   "typings": "index.d.ts",
