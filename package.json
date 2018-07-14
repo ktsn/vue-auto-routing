@@ -16,7 +16,8 @@
   "main": "index.js",
   "typings": "index.d.ts",
   "files": [
-    "lib"
+    "lib",
+    "index.d.ts"
   ],
   "homepage": "https://github.com/ktsn/vue-auto-routing",
   "bugs": "https://github.com/ktsn/vue-auto-routing/issues",
