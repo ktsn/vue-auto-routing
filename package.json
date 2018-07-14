@@ -32,6 +32,7 @@
     },
     "testRegex": "/test/.+\\.spec\\.(js|ts)$",
     "modulePathIgnorePatterns": [
+      "<rootDir>/index.js",
       "<rootDir>/test/fixtures/"
     ],
     "moduleFileExtensions": [
@@ -46,8 +47,10 @@
     }
   },
   "devDependencies": {
+    "@types/fs-extra": "^5.0.4",
     "@types/jest": "^22.2.2",
     "@types/webpack": "^4.4.5",
+    "fs-extra": "^6.0.1",
     "jest": "^22.4.3",
     "prettier": "1.11.1",
     "ts-jest": "^22.4.2",

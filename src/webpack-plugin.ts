@@ -18,11 +18,14 @@ class VueAutoRoutingPlugin {
   }
 
   apply(compiler: Compiler) {
-    compiler.hooks.run.tap(pluginName, () => {
+    const generate = () => {
       const code = generateRoutes(this.options)
       const to = path.resolve(__dirname, '../index.js')
       fs.writeFileSync(to, code)
-    })
+    }
+
+    compiler.hooks.run.tap(pluginName, generate)
+    compiler.hooks.watchRun.tap(pluginName, generate)
   }
 }
 
