@@ -96,4 +96,26 @@ describe('webpack plugin', () => {
       }
     })
   })
+
+  it('does not fire compilation when the route does not changed', done => {
+    const plugin = new Plugin({
+      pages: resolve('fixtures/pages')
+    })
+
+    let count = 0
+    const watching = compiler(plugin).watch({}, () => {
+      count++
+      switch (count) {
+        case 3:
+          fail('webpack watcher seems to go infinite loop')
+          done()
+          break
+        default:
+      }
+    })
+
+    setTimeout(() => {
+      watching.close(done)
+    }, 1000)
+  })
 })

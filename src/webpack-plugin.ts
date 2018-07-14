@@ -21,6 +21,14 @@ class VueAutoRoutingPlugin {
     const generate = () => {
       const code = generateRoutes(this.options)
       const to = path.resolve(__dirname, '../index.js')
+
+      if (
+        fs.existsSync(to) &&
+        fs.readFileSync(to, 'utf8').trim() === code.trim()
+      ) {
+        return
+      }
+
       fs.writeFileSync(to, code)
     }
 
