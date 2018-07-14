@@ -31,6 +31,9 @@
       "^.+\\.ts$": "ts-jest"
     },
     "testRegex": "/test/.+\\.spec\\.(js|ts)$",
+    "modulePathIgnorePatterns": [
+      "<rootDir>/test/fixtures/"
+    ],
     "moduleFileExtensions": [
       "ts",
       "js",
