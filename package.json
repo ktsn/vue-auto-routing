@@ -26,7 +26,7 @@
     "url": "https://github.com/ktsn/vue-auto-routing.git"
   },
   "scripts": {
-    "prepublishOnly": "npm run clean && npm run test && npm run build",
+    "prepublishOnly": "npm run test && npm run clean && npm run build",
     "clean": "rm -rf lib index.js",
     "build": "tsc -p src",
     "dev": "jest --watch",
