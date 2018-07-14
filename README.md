@@ -2,6 +2,8 @@
 
 Generate Vue Router routing automatically.
 
+You may want to use [vue-cli-plugin-auto-routing](https://github.com/ktsn/vue-cli-plugin-auto-routing) which includes all useful features on routing.
+
 ## Installation
 
 ```bash
@@ -50,6 +52,12 @@ module.exports = {
   ]
 }
 ```
+
+## Related Projects
+
+* [vue-cli-plugin-auto-routing](https://github.com/ktsn/vue-cli-plugin-auto-routing): Vue CLI plugin including auto pages and layouts resolution.
+* [vue-router-layout](https://github.com/ktsn/vue-router-layout): Lightweight layout resolver for Vue Router.
+* [vue-route-generator](https://github.com/ktsn/vue-route-generator): Low-level utility generating routing which vue-auto-routing using under the hood.
 
 ## License
 
