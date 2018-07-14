@@ -27,7 +27,7 @@
   },
   "scripts": {
     "prepublishOnly": "npm run clean && npm run test && npm run build",
-    "clean": "rm -rf lib",
+    "clean": "rm -rf lib index.js",
     "build": "tsc -p src",
     "dev": "jest --watch",
     "lint": "tslint -p . && prettier --list-different \"{src,scripts,test}/**/*.{js,ts}\"",
