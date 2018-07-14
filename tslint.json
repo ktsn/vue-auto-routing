@@ -1,0 +1,6 @@
+{
+  "extends": [
+    "tslint-config-ktsn",
+    "tslint-config-prettier"
+  ]
+}

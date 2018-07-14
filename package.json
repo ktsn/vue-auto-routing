@@ -1,0 +1,61 @@
+{
+  "name": "vue-auto-routing",
+  "version": "0.0.0",
+  "author": "katashin",
+  "description": "",
+  "keywords": [],
+  "license": "MIT",
+  "main": "index.js",
+  "typings": "index.d.ts",
+  "files": [
+    "lib"
+  ],
+  "homepage": "https://github.com/ktsn/vue-auto-routing",
+  "bugs": "https://github.com/ktsn/vue-auto-routing/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ktsn/vue-auto-routing.git"
+  },
+  "scripts": {
+    "prepublishOnly": "npm run clean && npm run test && npm run build",
+    "clean": "rm -rf lib",
+    "build": "tsc -p src",
+    "dev": "jest --watch",
+    "lint": "tslint -p . && prettier --list-different \"{src,scripts,test}/**/*.{js,ts}\"",
+    "format": "prettier --write \"{src,scripts,test}/**/*.{js,ts}\"",
+    "test": "npm run lint && npm run test:unit",
+    "test:unit": "jest"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.ts$": "ts-jest"
+    },
+    "testRegex": "/test/.+\\.spec\\.(js|ts)$",
+    "moduleFileExtensions": [
+      "ts",
+      "js",
+      "json"
+    ],
+    "globals": {
+      "ts-jest": {
+        "tsConfigFile": "test/tsconfig.json"
+      }
+    }
+  },
+  "devDependencies": {
+    "@types/jest": "^22.2.2",
+    "@types/webpack": "^4.4.5",
+    "jest": "^22.4.3",
+    "prettier": "1.11.1",
+    "ts-jest": "^22.4.2",
+    "tslint": "^5.9.1",
+    "tslint-config-ktsn": "^2.1.0",
+    "tslint-config-prettier": "^1.10.0",
+    "typescript": "^2.8.1",
+    "vue-router": "^3.0.1",
+    "webpack": "^4.16.0"
+  },
+  "dependencies": {
+    "vue-route-generator": "^0.1.0"
+  }
+}

@@ -1,0 +1,4 @@
+node_modules/
+/lib/
+/test/fixtures/out/
+/index.js
