@@ -67,10 +67,12 @@
     "tslint-config-ktsn": "^2.1.0",
     "tslint-config-prettier": "^1.10.0",
     "typescript": "^2.8.1",
+    "vue": "^2.5.16",
     "vue-router": "^3.0.1",
+    "vue-template-compiler": "^2.5.16",
     "webpack": "^4.16.0"
   },
   "dependencies": {
-    "vue-route-generator": "^0.1.0"
+    "vue-route-generator": "^0.2.1"
   }
 }

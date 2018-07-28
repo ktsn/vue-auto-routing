@@ -217,22 +217,30 @@ console.log(___WEBPACK_IMPORTED_MODULE_0__[\\"default\\"])
 
 \\"use strict\\";
 __webpack_require__.r(__webpack_exports__);
+const Index = () => __webpack_require__.e(/* import() | index */ 1).then(__webpack_require__.t.bind(null, 2, 7))
+const UsersId = () =>
+  __webpack_require__.e(/* import() | users-id */ 2).then(__webpack_require__.t.bind(null, 3, 7))
+const UsersFoo = () =>
+  __webpack_require__.e(/* import() | users-foo */ 3).then(__webpack_require__.t.bind(null, 4, 7))
+
 /* harmony default export */ __webpack_exports__[\\"default\\"] = ([
   {
     name: 'index',
     path: '/',
-    component: () => __webpack_require__.e(/* import() | index */ 1).then(__webpack_require__.t.bind(null, 2, 7))
+    component: Index
   },
   {
     name: 'users-id',
     path: '/users/:id',
-    component: () => __webpack_require__.e(/* import() | users-id */ 2).then(__webpack_require__.t.bind(null, 3, 7))
+    component: UsersId
   },
   {
     name: 'users-foo',
     path: '/users/foo',
-    component: () => __webpack_require__.e(/* import() | users-foo */ 3).then(__webpack_require__.t.bind(null, 4, 7))
-  }]);
+    component: UsersFoo
+  }
+]);
+
 
 /***/ })
 /******/ ]);"
@@ -455,28 +463,38 @@ console.log(___WEBPACK_IMPORTED_MODULE_0__[\\"default\\"])
 
 \\"use strict\\";
 __webpack_require__.r(__webpack_exports__);
+const Index = () => __webpack_require__.e(/* import() | index */ 1).then(__webpack_require__.t.bind(null, 2, 7))
+const Users = () => __webpack_require__.e(/* import() | users */ 4).then(__webpack_require__.t.bind(null, 5, 7))
+const UsersId = () =>
+  __webpack_require__.e(/* import() | users-id */ 2).then(__webpack_require__.t.bind(null, 3, 7))
+const UsersFoo = () =>
+  __webpack_require__.e(/* import() | users-foo */ 3).then(__webpack_require__.t.bind(null, 4, 7))
+
 /* harmony default export */ __webpack_exports__[\\"default\\"] = ([
   {
     name: 'index',
     path: '/',
-    component: () => __webpack_require__.e(/* import() | index */ 1).then(__webpack_require__.t.bind(null, 2, 7))
+    component: Index
   },
   {
     name: 'users',
     path: '/users',
-    component: () => __webpack_require__.e(/* import() | users */ 4).then(__webpack_require__.t.bind(null, 5, 7)),
+    component: Users,
     children: [
-  {
-    name: 'users-id',
-    path: ':id',
-    component: () => __webpack_require__.e(/* import() | users-id */ 2).then(__webpack_require__.t.bind(null, 3, 7))
-  },
-  {
-    name: 'users-foo',
-    path: 'foo',
-    component: () => __webpack_require__.e(/* import() | users-foo */ 3).then(__webpack_require__.t.bind(null, 4, 7))
-  }]
-  }]);
+      {
+        name: 'users-id',
+        path: ':id',
+        component: UsersId
+      },
+      {
+        name: 'users-foo',
+        path: 'foo',
+        component: UsersFoo
+      }
+    ]
+  }
+]);
+
 
 /***/ })
 /******/ ]);"
@@ -699,17 +717,23 @@ console.log(___WEBPACK_IMPORTED_MODULE_0__[\\"default\\"])
 
 \\"use strict\\";
 __webpack_require__.r(__webpack_exports__);
+const Index = () => __webpack_require__.e(/* import() | index */ 1).then(__webpack_require__.t.bind(null, 2, 7))
+const UsersId = () =>
+  __webpack_require__.e(/* import() | users-id */ 2).then(__webpack_require__.t.bind(null, 3, 7))
+
 /* harmony default export */ __webpack_exports__[\\"default\\"] = ([
   {
     name: 'index',
     path: '/',
-    component: () => __webpack_require__.e(/* import() | index */ 1).then(__webpack_require__.t.bind(null, 2, 7))
+    component: Index
   },
   {
     name: 'users-id',
     path: '/users/:id',
-    component: () => __webpack_require__.e(/* import() | users-id */ 2).then(__webpack_require__.t.bind(null, 3, 7))
-  }]);
+    component: UsersId
+  }
+]);
+
 
 /***/ })
 /******/ ]);"
