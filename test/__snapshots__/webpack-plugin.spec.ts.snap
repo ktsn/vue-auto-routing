@@ -218,10 +218,10 @@ console.log(___WEBPACK_IMPORTED_MODULE_0__[\\"default\\"])
 \\"use strict\\";
 __webpack_require__.r(__webpack_exports__);
 const Index = () => __webpack_require__.e(/* import() | index */ 1).then(__webpack_require__.t.bind(null, 2, 7))
-const UsersId = () =>
-  __webpack_require__.e(/* import() | users-id */ 2).then(__webpack_require__.t.bind(null, 3, 7))
 const UsersFoo = () =>
-  __webpack_require__.e(/* import() | users-foo */ 3).then(__webpack_require__.t.bind(null, 4, 7))
+  __webpack_require__.e(/* import() | users-foo */ 2).then(__webpack_require__.t.bind(null, 3, 7))
+const UsersId = () =>
+  __webpack_require__.e(/* import() | users-id */ 3).then(__webpack_require__.t.bind(null, 4, 7))
 
 /* harmony default export */ __webpack_exports__[\\"default\\"] = ([
   {
@@ -230,14 +230,14 @@ const UsersFoo = () =>
     component: Index
   },
   {
-    name: 'users-id',
-    path: '/users/:id',
-    component: UsersId
-  },
-  {
     name: 'users-foo',
     path: '/users/foo',
     component: UsersFoo
+  },
+  {
+    name: 'users-id',
+    path: '/users/:id?',
+    component: UsersId
   }
 ]);
 
@@ -465,10 +465,10 @@ console.log(___WEBPACK_IMPORTED_MODULE_0__[\\"default\\"])
 __webpack_require__.r(__webpack_exports__);
 const Index = () => __webpack_require__.e(/* import() | index */ 1).then(__webpack_require__.t.bind(null, 2, 7))
 const Users = () => __webpack_require__.e(/* import() | users */ 4).then(__webpack_require__.t.bind(null, 5, 7))
-const UsersId = () =>
-  __webpack_require__.e(/* import() | users-id */ 2).then(__webpack_require__.t.bind(null, 3, 7))
 const UsersFoo = () =>
-  __webpack_require__.e(/* import() | users-foo */ 3).then(__webpack_require__.t.bind(null, 4, 7))
+  __webpack_require__.e(/* import() | users-foo */ 2).then(__webpack_require__.t.bind(null, 3, 7))
+const UsersId = () =>
+  __webpack_require__.e(/* import() | users-id */ 3).then(__webpack_require__.t.bind(null, 4, 7))
 
 /* harmony default export */ __webpack_exports__[\\"default\\"] = ([
   {
@@ -482,14 +482,14 @@ const UsersFoo = () =>
     component: Users,
     children: [
       {
-        name: 'users-id',
-        path: ':id',
-        component: UsersId
-      },
-      {
         name: 'users-foo',
         path: 'foo',
         component: UsersFoo
+      },
+      {
+        name: 'users-id',
+        path: ':id?',
+        component: UsersId
       }
     ]
   }
@@ -719,7 +719,7 @@ console.log(___WEBPACK_IMPORTED_MODULE_0__[\\"default\\"])
 __webpack_require__.r(__webpack_exports__);
 const Index = () => __webpack_require__.e(/* import() | index */ 1).then(__webpack_require__.t.bind(null, 2, 7))
 const UsersId = () =>
-  __webpack_require__.e(/* import() | users-id */ 2).then(__webpack_require__.t.bind(null, 3, 7))
+  __webpack_require__.e(/* import() | users-id */ 3).then(__webpack_require__.t.bind(null, 4, 7))
 
 /* harmony default export */ __webpack_exports__[\\"default\\"] = ([
   {
@@ -729,7 +729,7 @@ const UsersId = () =>
   },
   {
     name: 'users-id',
-    path: '/users/:id',
+    path: '/users/:id?',
     component: UsersId
   }
 ]);
