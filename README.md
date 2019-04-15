@@ -10,6 +10,10 @@ You may want to use [vue-cli-plugin-auto-routing](https://github.com/ktsn/vue-cl
 $ npm install -D vue-auto-routing
 ```
 
+## Requirements
+
+- webpack >= v4.0.0
+
 ## Usage
 
 vue-auto-routing resolves Vue Router routing automatically by using [vue-route-generator](https://github.com/ktsn/vue-route-generator). The routes are generated with the same rules with [Nuxt routing](https://nuxtjs.org/guide/routing).
