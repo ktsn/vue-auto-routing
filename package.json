@@ -51,26 +51,26 @@
     ],
     "globals": {
       "ts-jest": {
-        "tsConfigFile": "test/tsconfig.json"
+        "tsConfig": "test/tsconfig.json"
       }
     }
   },
   "devDependencies": {
-    "@types/fs-extra": "^5.0.4",
-    "@types/jest": "^22.2.2",
-    "@types/webpack": "^4.4.5",
-    "fs-extra": "^6.0.1",
-    "jest": "^22.4.3",
-    "prettier": "1.11.1",
-    "ts-jest": "^22.4.2",
-    "tslint": "^5.9.1",
+    "@types/fs-extra": "^8.0.0",
+    "@types/jest": "^24.0.17",
+    "@types/webpack": "^4.32.1",
+    "fs-extra": "^8.1.0",
+    "jest": "^24.8.0",
+    "prettier": "1.18.2",
+    "ts-jest": "^24.0.2",
+    "tslint": "^5.18.0",
     "tslint-config-ktsn": "^2.1.0",
-    "tslint-config-prettier": "^1.10.0",
-    "typescript": "^2.8.1",
-    "vue": "^2.5.16",
-    "vue-router": "^3.0.1",
-    "vue-template-compiler": "^2.5.16",
-    "webpack": "^4.16.0"
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.5.3",
+    "vue": "^2.6.10",
+    "vue-router": "^3.1.2",
+    "vue-template-compiler": "^2.6.10",
+    "webpack": "^4.39.2"
   },
   "dependencies": {
     "vue-route-generator": "^0.4.1"
