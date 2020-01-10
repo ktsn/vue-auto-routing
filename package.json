@@ -17,6 +17,7 @@
   "typings": "index.d.ts",
   "files": [
     "lib",
+    "index.js",
     "index.d.ts"
   ],
   "homepage": "https://github.com/ktsn/vue-auto-routing",
@@ -27,7 +28,7 @@
   },
   "scripts": {
     "prepublishOnly": "npm run test && npm run clean && npm run build",
-    "clean": "rm -rf lib index.js",
+    "clean": "rm -rf lib index.js && echo export default [] > index.js",
     "build": "tsc -p src",
     "dev": "jest --watch",
     "lint": "tslint -p . && prettier --list-different \"{src,scripts,test}/**/*.{js,ts}\"",
