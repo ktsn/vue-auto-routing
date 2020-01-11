@@ -27,9 +27,9 @@ const matchOutputWithSnapshot = () => {
   expect(out).toMatchSnapshot()
 }
 
-const addPage = (p: string) => {
+const addPage = (p: string, content: string = '') => {
   const to = resolve(path.join('fixtures/pages', p))
-  fse.outputFileSync(to, '')
+  fse.outputFileSync(to, content)
 }
 
 const removePage = (p: string) => {
@@ -78,6 +78,34 @@ describe('webpack plugin', () => {
     })
   })
 
+  it('watches changing route meta data', done => {
+    const plugin = new Plugin({
+      pages: resolve('fixtures/pages')
+    })
+
+    let count = 0
+    const watching = compiler(plugin).watch({}, () => {
+      count++
+      switch (count) {
+        case 1:
+          addPage(
+            'users/foo.vue',
+            `
+              <route-meta>
+              {
+                "requiresAuth": true
+              }
+              </route-meta>
+            `
+          )
+          break
+        default:
+          matchOutputWithSnapshot()
+          watching.close(done)
+      }
+    })
+  })
+
   it('watches removing a page', done => {
     const plugin = new Plugin({
       pages: resolve('fixtures/pages')
@@ -108,8 +136,6 @@ describe('webpack plugin', () => {
       switch (count) {
         case 10:
           fail('webpack watcher seems to go infinite loop')
-          done()
-          break
         default:
       }
     })
@@ -118,4 +144,47 @@ describe('webpack plugin', () => {
       watching.close(done)
     }, 5000)
   }, 10000)
+
+  it('should not stop watching after detecting route meta syntax errors', done => {
+    const plugin = new Plugin({
+      pages: resolve('fixtures/pages')
+    })
+
+    let count = 0
+    const watching = compiler(plugin).watch({}, () => {
+      count++
+      switch (count) {
+        case 1:
+          addPage(
+            'users/foo.vue',
+            `
+              <route-meta>
+              {
+                "requiresAuth": true,
+              }
+              </route-meta>
+            `
+          )
+          break
+        case 2:
+          addPage(
+            'users/foo.vue',
+            `
+              <route-meta>
+              {
+                "requiresAuth": true
+              }
+              </route-meta>
+            `
+          )
+          break
+        case 3:
+          // Somehow, changing content triggers compilation twice.
+          break
+        default:
+          matchOutputWithSnapshot()
+          watching.close(done)
+      }
+    })
+  })
 })
