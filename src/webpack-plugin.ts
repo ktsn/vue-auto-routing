@@ -32,8 +32,13 @@ class VueAutoRoutingPlugin {
       fs.writeFileSync(to, code)
     }
 
-    compiler.hooks.run.tap(pluginName, generate)
-    compiler.hooks.watchRun.tap(pluginName, generate)
+    compiler.hooks.thisCompilation.tap(pluginName, compilation => {
+      try {
+        generate()
+      } catch (error) {
+        compilation.errors.push(error)
+      }
+    })
   }
 }
 
