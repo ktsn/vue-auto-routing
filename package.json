@@ -73,6 +73,6 @@
     "webpack": "^4.39.2"
   },
   "dependencies": {
-    "vue-route-generator": "^0.4.1"
+    "vue-route-generator": "^0.4.3"
   }
 }
