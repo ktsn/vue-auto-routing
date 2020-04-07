@@ -1,5 +1,4 @@
 node_modules/
-/lib/
 /test/fixtures/out/
 /test/fixtures/pages/
 /index.js
