@@ -11,14 +11,14 @@ const compiler = (plugin: Plugin): webpack.Compiler => {
     entry: resolve('./fixtures/fake-router.js'),
     output: {
       path: resolve('./fixtures/out'),
-      filename: 'main.js'
+      filename: 'main.js',
     },
     resolve: {
       alias: {
-        '@': resolve('./fixtures/')
-      }
+        '@': resolve('./fixtures/'),
+      },
     },
-    plugins: [plugin]
+    plugins: [plugin],
   })
 }
 
@@ -48,9 +48,9 @@ describe('webpack plugin', () => {
     addPage('users/_id.vue')
   })
 
-  it('imports dynamically created routes', done => {
+  it('imports dynamically created routes', (done) => {
     const plugin = new Plugin({
-      pages: resolve('fixtures/pages')
+      pages: resolve('fixtures/pages'),
     })
 
     compiler(plugin).run(() => {
@@ -59,9 +59,9 @@ describe('webpack plugin', () => {
     })
   })
 
-  it('watches adding a page', done => {
+  it('watches adding a page', (done) => {
     const plugin = new Plugin({
-      pages: resolve('fixtures/pages')
+      pages: resolve('fixtures/pages'),
     })
 
     let count = 0
@@ -78,9 +78,9 @@ describe('webpack plugin', () => {
     })
   })
 
-  it('watches changing route meta data', done => {
+  it('watches changing route meta data', (done) => {
     const plugin = new Plugin({
-      pages: resolve('fixtures/pages')
+      pages: resolve('fixtures/pages'),
     })
 
     let count = 0
@@ -106,9 +106,9 @@ describe('webpack plugin', () => {
     })
   })
 
-  it('watches removing a page', done => {
+  it('watches removing a page', (done) => {
     const plugin = new Plugin({
-      pages: resolve('fixtures/pages')
+      pages: resolve('fixtures/pages'),
     })
 
     let count = 0
@@ -125,9 +125,9 @@ describe('webpack plugin', () => {
     })
   })
 
-  it('does not fire compilation when the route does not changed', done => {
+  it('does not fire compilation when the route does not changed', (done) => {
     const plugin = new Plugin({
-      pages: resolve('fixtures/pages')
+      pages: resolve('fixtures/pages'),
     })
 
     let count = 0
@@ -145,9 +145,9 @@ describe('webpack plugin', () => {
     }, 5000)
   }, 10000)
 
-  it('should not stop watching after detecting route meta syntax errors', done => {
+  it('should not stop watching after detecting route meta syntax errors', (done) => {
     const plugin = new Plugin({
-      pages: resolve('fixtures/pages')
+      pages: resolve('fixtures/pages'),
     })
 
     let count = 0
