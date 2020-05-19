@@ -78,7 +78,7 @@ describe('webpack plugin', () => {
     })
   })
 
-  it('watches changing route meta data', (done) => {
+  it('watches changing route custom block data', (done) => {
     const plugin = new Plugin({
       pages: resolve('fixtures/pages'),
     })
@@ -91,11 +91,11 @@ describe('webpack plugin', () => {
           addPage(
             'users/foo.vue',
             `
-              <route-meta>
+              <route>
               {
                 "requiresAuth": true
               }
-              </route-meta>
+              </route>
             `
           )
           break
@@ -145,7 +145,7 @@ describe('webpack plugin', () => {
     }, 5000)
   }, 10000)
 
-  it('should not stop watching after detecting route meta syntax errors', (done) => {
+  it('should not stop watching after detecting route custom block syntax errors', (done) => {
     const plugin = new Plugin({
       pages: resolve('fixtures/pages'),
     })
@@ -158,11 +158,13 @@ describe('webpack plugin', () => {
           addPage(
             'users/foo.vue',
             `
-              <route-meta>
+              <route>
               {
-                "requiresAuth": true,
+                "meta": {
+                  "requiresAuth": true,
+                }
               }
-              </route-meta>
+              </route>
             `
           )
           break
@@ -170,11 +172,13 @@ describe('webpack plugin', () => {
           addPage(
             'users/foo.vue',
             `
-              <route-meta>
+              <route>
               {
-                "requiresAuth": true
+                "meta": {
+                  "requiresAuth": true
+                }
               }
-              </route-meta>
+              </route>
             `
           )
           break

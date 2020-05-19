@@ -219,13 +219,13 @@ console.log(___WEBPACK_IMPORTED_MODULE_0__[\\"default\\"])
 
 \\"use strict\\";
 __webpack_require__.r(__webpack_exports__);
-function Index() {
+function index() {
   return __webpack_require__.e(/* import() | index */ 1).then(__webpack_require__.t.bind(null, 2, 7))
 }
-function UsersFoo() {
+function users_foo() {
   return __webpack_require__.e(/* import() | users-foo */ 2).then(__webpack_require__.t.bind(null, 3, 7))
 }
-function UsersId() {
+function users__id() {
   return __webpack_require__.e(/* import() | users-id */ 3).then(__webpack_require__.t.bind(null, 4, 7))
 }
 
@@ -233,18 +233,18 @@ function UsersId() {
   {
     name: 'index',
     path: '/',
-    component: Index
+    component: index,
   },
   {
     name: 'users-foo',
     path: '/users/foo',
-    component: UsersFoo
+    component: users_foo,
   },
   {
     name: 'users-id',
     path: '/users/:id?',
-    component: UsersId
-  }
+    component: users__id,
+  },
 ]);
 
 
@@ -252,7 +252,7 @@ function UsersId() {
 /******/ ]);"
 `;
 
-exports[`webpack plugin should not stop watching after detecting route meta syntax errors 1`] = `
+exports[`webpack plugin should not stop watching after detecting route custom block syntax errors 1`] = `
 "/******/ (function(modules) { // webpackBootstrap
 /******/ 	// install a JSONP callback for chunk loading
 /******/ 	function webpackJsonpCallback(data) {
@@ -471,13 +471,13 @@ console.log(___WEBPACK_IMPORTED_MODULE_0__[\\"default\\"])
 
 \\"use strict\\";
 __webpack_require__.r(__webpack_exports__);
-function Index() {
+function index() {
   return __webpack_require__.e(/* import() | index */ 1).then(__webpack_require__.t.bind(null, 2, 7))
 }
-function UsersFoo() {
+function users_foo() {
   return __webpack_require__.e(/* import() | users-foo */ 2).then(__webpack_require__.t.bind(null, 3, 7))
 }
-function UsersId() {
+function users__id() {
   return __webpack_require__.e(/* import() | users-id */ 3).then(__webpack_require__.t.bind(null, 4, 7))
 }
 
@@ -485,21 +485,21 @@ function UsersId() {
   {
     name: 'index',
     path: '/',
-    component: Index
+    component: index,
   },
   {
     name: 'users-foo',
     path: '/users/foo',
-    component: UsersFoo,
+    component: users_foo,
     meta: {
-      requiresAuth: true
-    }
+      requiresAuth: true,
+    },
   },
   {
     name: 'users-id',
     path: '/users/:id?',
-    component: UsersId
-  }
+    component: users__id,
+  },
 ]);
 
 
@@ -726,16 +726,16 @@ console.log(___WEBPACK_IMPORTED_MODULE_0__[\\"default\\"])
 
 \\"use strict\\";
 __webpack_require__.r(__webpack_exports__);
-function Index() {
+function index() {
   return __webpack_require__.e(/* import() | index */ 1).then(__webpack_require__.t.bind(null, 2, 7))
 }
-function Users() {
+function users() {
   return __webpack_require__.e(/* import() | users */ 4).then(__webpack_require__.t.bind(null, 5, 7))
 }
-function UsersFoo() {
+function users_foo() {
   return __webpack_require__.e(/* import() | users-foo */ 2).then(__webpack_require__.t.bind(null, 3, 7))
 }
-function UsersId() {
+function users__id() {
   return __webpack_require__.e(/* import() | users-id */ 3).then(__webpack_require__.t.bind(null, 4, 7))
 }
 
@@ -743,25 +743,25 @@ function UsersId() {
   {
     name: 'index',
     path: '/',
-    component: Index
+    component: index,
   },
   {
     name: 'users',
     path: '/users',
-    component: Users,
+    component: users,
     children: [
       {
         name: 'users-foo',
         path: 'foo',
-        component: UsersFoo
+        component: users_foo,
       },
       {
         name: 'users-id',
         path: ':id?',
-        component: UsersId
-      }
-    ]
-  }
+        component: users__id,
+      },
+    ],
+  },
 ]);
 
 
@@ -769,7 +769,7 @@ function UsersId() {
 /******/ ]);"
 `;
 
-exports[`webpack plugin watches changing route meta data 1`] = `
+exports[`webpack plugin watches changing route custom block data 1`] = `
 "/******/ (function(modules) { // webpackBootstrap
 /******/ 	// install a JSONP callback for chunk loading
 /******/ 	function webpackJsonpCallback(data) {
@@ -988,13 +988,13 @@ console.log(___WEBPACK_IMPORTED_MODULE_0__[\\"default\\"])
 
 \\"use strict\\";
 __webpack_require__.r(__webpack_exports__);
-function Index() {
+function index() {
   return __webpack_require__.e(/* import() | index */ 1).then(__webpack_require__.t.bind(null, 2, 7))
 }
-function UsersFoo() {
+function users_foo() {
   return __webpack_require__.e(/* import() | users-foo */ 2).then(__webpack_require__.t.bind(null, 3, 7))
 }
-function UsersId() {
+function users__id() {
   return __webpack_require__.e(/* import() | users-id */ 3).then(__webpack_require__.t.bind(null, 4, 7))
 }
 
@@ -1002,21 +1002,19 @@ function UsersId() {
   {
     name: 'index',
     path: '/',
-    component: Index
+    component: index,
   },
   {
     name: 'users-foo',
     path: '/users/foo',
-    component: UsersFoo,
-    meta: {
-      requiresAuth: true
-    }
+    component: users_foo,
+    requiresAuth: true,
   },
   {
     name: 'users-id',
     path: '/users/:id?',
-    component: UsersId
-  }
+    component: users__id,
+  },
 ]);
 
 
@@ -1243,10 +1241,10 @@ console.log(___WEBPACK_IMPORTED_MODULE_0__[\\"default\\"])
 
 \\"use strict\\";
 __webpack_require__.r(__webpack_exports__);
-function Index() {
+function index() {
   return __webpack_require__.e(/* import() | index */ 1).then(__webpack_require__.t.bind(null, 2, 7))
 }
-function UsersId() {
+function users__id() {
   return __webpack_require__.e(/* import() | users-id */ 3).then(__webpack_require__.t.bind(null, 4, 7))
 }
 
@@ -1254,13 +1252,13 @@ function UsersId() {
   {
     name: 'index',
     path: '/',
-    component: Index
+    component: index,
   },
   {
     name: 'users-id',
     path: '/users/:id?',
-    component: UsersId
-  }
+    component: users__id,
+  },
 ]);
 
 
