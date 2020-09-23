@@ -2,17 +2,12 @@ import * as assert from 'assert'
 import * as fs from 'fs'
 import * as path from 'path'
 import { Compiler } from 'webpack'
-import { generateRoutes } from 'vue-route-generator'
+import { generateRoutes, GenerateConfig } from 'vue-route-generator'
 
 const pluginName = 'VueAutoRoutingPlugin'
 
-interface Options {
-  pages: string;
+interface Options extends GenerateConfig {
   pageName?: string;
-  importPrefix?: string;
-  dynamicImport?: boolean;
-  chunkNamePrefix?: string;
-  nested?: boolean;
 }
 
 namespace VueAutoRoutingPlugin {
@@ -45,7 +40,9 @@ class VueAutoRoutingPlugin {
       ) {
         return
       }
-
+      if (!fs.existsSync(path.dirname(to))) {
+        fs.mkdirSync(path.dirname(to))
+      }
       fs.writeFileSync(to, code)
     }
     const generateIndex = (options: Options[]) => {
@@ -62,6 +59,12 @@ class VueAutoRoutingPlugin {
         if (Object.prototype.toString.call(this.options) === '[object Object]') {
           generate(this.options as Options);
         } else if (Array.isArray(this.options)) {
+          const isAvailable = this.options.every((value) => {
+            return typeof value.pageName === 'string'
+          })
+          if (!isAvailable) {
+            throw new Error('MPA router option need pageName')
+          }
           this.options.forEach(option => {
             generate(option)
           })
@@ -71,9 +74,12 @@ class VueAutoRoutingPlugin {
             fs.readFileSync(indexPath, 'utf8').trim() === code.trim()) {
             return;
           }
+          if (!fs.existsSync(path.dirname(indexPath))) {
+            fs.mkdirSync(path.dirname(indexPath))
+          }
           fs.writeFileSync(indexPath, code);
         } else {
-          throw new Error('options type need object or array')
+          throw new Error('options must be an object or an array')
         }
       } catch (error) {
         compilation.errors.push(error)

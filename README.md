@@ -1,5 +1,5 @@
 # vue-auto-routing
-## forked from ktsn/vue-auto-routing
+
 Generate Vue Router routing automatically.
 
 You may want to use [vue-cli-plugin-auto-routing](https://github.com/ktsn/vue-cli-plugin-auto-routing) which includes all useful features on routing.
