@@ -188,36 +188,3 @@ describe('webpack plugin', () => {
     })
   })
 })
-
-describe('webpack plugin with array options', () => {
-  beforeEach(() => {
-    fse.removeSync(resolve('../index.js'))
-
-    // reset pages
-    fse.removeSync(resolve('fixtures/pages'))
-    addPage('index.vue')
-    addPage('users/foo.vue')
-    addPage('users/_id.vue')
-    addPage('shop/product.vue')
-    addPage('shop/order.vue')
-  })
-
-  it('creat MAP router', done => {
-    const plugin = new Plugin([
-      {
-        pageName: 'users',
-        pages: resolve('fixtures/pages/users')
-      },
-      {
-        pageName: 'shop',
-        pages: resolve('fixtures/pages/shop')
-      },
-    ])
-
-    compiler(plugin).run(() => {
-
-      done()
-    })
-
-  })
-})
