@@ -507,6 +507,37 @@ function users__id() {
 /******/ ]);"
 `;
 
+exports[`webpack plugin should write to custom output file if specified 1`] = `
+"function index() {
+  return import(/* webpackChunkName: \\"index\\" */ '@/pages/index.vue')
+}
+function users_foo() {
+  return import(/* webpackChunkName: \\"users-foo\\" */ '@/pages/users/foo.vue')
+}
+function users__id() {
+  return import(/* webpackChunkName: \\"users-id\\" */ '@/pages/users/_id.vue')
+}
+
+export default [
+  {
+    name: 'index',
+    path: '/',
+    component: index,
+  },
+  {
+    name: 'users-foo',
+    path: '/users/foo',
+    component: users_foo,
+  },
+  {
+    name: 'users-id',
+    path: '/users/:id?',
+    component: users__id,
+  },
+]
+"
+`;
+
 exports[`webpack plugin watches adding a page 1`] = `
 "/******/ (function(modules) { // webpackBootstrap
 /******/ 	// install a JSONP callback for chunk loading
