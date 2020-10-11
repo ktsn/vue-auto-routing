@@ -6,7 +6,9 @@ import { generateRoutes, GenerateConfig } from 'vue-route-generator'
 
 const pluginName = 'VueAutoRoutingPlugin'
 
-interface Options extends GenerateConfig {}
+interface Options extends GenerateConfig {
+  outFile?: string
+}
 
 namespace VueAutoRoutingPlugin {
   export type AutoRoutingOptions = Options
@@ -20,7 +22,7 @@ class VueAutoRoutingPlugin {
   apply(compiler: Compiler) {
     const generate = () => {
       const code = generateRoutes(this.options)
-      const to = path.resolve(__dirname, '../index.js')
+      const to = this.options.outFile || path.resolve(__dirname, '../index.js')
 
       if (
         fs.existsSync(to) &&

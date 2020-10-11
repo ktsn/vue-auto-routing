@@ -22,8 +22,11 @@ const compiler = (plugin: Plugin): webpack.Compiler => {
   })
 }
 
-const matchOutputWithSnapshot = () => {
-  const out = fse.readFileSync(resolve('./fixtures/out/main.js'), 'utf8')
+const matchOutputWithSnapshot = (path?: string) => {
+  const out = fse.readFileSync(
+    resolve(path || './fixtures/out/main.js'),
+    'utf8'
+  )
   expect(out).toMatchSnapshot()
 }
 
@@ -189,6 +192,19 @@ describe('webpack plugin', () => {
           matchOutputWithSnapshot()
           watching.close(done)
       }
+    })
+  })
+
+  it('should write to custom output file if specified', (done) => {
+    const plugin = new Plugin({
+      pages: resolve('fixtures/pages'),
+      outFile: resolve('fixtures/out/custom.js'),
+    })
+
+    compiler(plugin).run(() => {
+      expect(fse.existsSync(resolve('./fixtures/out/custom.js'))).toBeTruthy()
+      matchOutputWithSnapshot('fixtures/out/custom.js')
+      done()
     })
   })
 })
