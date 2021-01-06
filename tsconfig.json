@@ -6,7 +6,8 @@
     "moduleResolution": "node",
     "strict": true,
     "noUnusedLocals": true,
-    "noUnusedParameters": true
+    "noUnusedParameters": true,
+    "skipLibCheck": true
   },
   "include": [
     "src/**/*.ts",
