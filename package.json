@@ -1,6 +1,6 @@
 {
   "name": "vue-auto-routing",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "katashin",
   "description": "Generate Vue Router routing automatically",
   "keywords": [
