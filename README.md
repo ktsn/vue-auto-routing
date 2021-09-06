@@ -51,7 +51,10 @@ module.exports = {
       pages: 'src/pages',
 
       // A string that will be added to importing component path (default @/pages/).
-      importPrefix: '@/pages/'
+      importPrefix: '@/pages/',
+      
+      // Optional: The path of the file in which the generated routes will be stored
+      outFile: 'src/routes.js',
     })
   ]
 }
